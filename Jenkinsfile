@@ -1,12 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage('helloworld') {
-      steps {
-        echo 'Hello from blue ocean'
-        sleep 10
-      }
+    agent { docker 'maven:3-alpine' } 
+    stages {
+        stage('Example Build') {
+            steps {
+                sh 'mvn -B clean verify'
+            }
+        }
     }
-
-  }
 }
