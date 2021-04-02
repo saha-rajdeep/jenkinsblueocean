@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Maven Build') {
+    stage('') {
       steps {
-        sh 'make'
-        archiveArtifacts(artifacts: '**/target/*.jar', fingerprint: true)
+        dockerNode(image: 'python')
       }
     }
 
