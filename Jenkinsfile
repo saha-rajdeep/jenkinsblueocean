@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Maven Build') {
       steps {
-        sh 'sh \'make\''
+        sh 'make'
         archiveArtifacts(artifacts: '**/target/*.jar', fingerprint: true)
       }
     }
