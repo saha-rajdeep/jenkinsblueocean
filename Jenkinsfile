@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('docker build') {
       steps {
-        dockerNode(image: 'python')
+        sh 'docker build -t hello_there .'
       }
     }
 
